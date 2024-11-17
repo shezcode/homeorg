@@ -18,7 +18,10 @@ export default function Navbar() {
           <Link href="/cuentas">Cuentas</Link>
         </li>
       </ul>
-      <ModeToggle />
+      <div className="flex flex-row gap-8 items-center">
+        <ModeToggle />
+        <Link href="/login">Login</Link>
+      </div>
     </nav>
   );
 }
