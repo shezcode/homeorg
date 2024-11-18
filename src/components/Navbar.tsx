@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ModeToggle } from "./ModeToggle";
 import { Separator } from "./ui/separator";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 export default function Navbar() {
   return (
@@ -20,7 +21,12 @@ export default function Navbar() {
       </ul>
       <div className="flex flex-row gap-8 items-center">
         <ModeToggle />
-        <Link href="/login">Login</Link>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
       </div>
     </nav>
   );
